@@ -1,0 +1,8 @@
+label: gpt
+device: /dev/nbd0
+unit: sectors
+first-lba: 2048
+last-lba: 1048542
+sector-size: 512
+
+/dev/nbd0p1 : start=        2048, size=     1044480, type=C12A7328-F81F-11D2-BA4B-00A0C93EC93B

@@ -1,0 +1,34 @@
+[Defines]
+  INF_VERSION = 1.25
+  BASE_NAME = UefiClient
+  FILE_GUID = 5d6443e6-4135-47b1-8c4c-1830452bf842
+  MODULE_TYPE = UEFI_APPLICATION
+  VERSION_STRING = 1.0
+  ENTRY_POINT = efi_main
+ 
+[Sources]
+  main.c
+ 
+[Packages]
+  MdePkg/MdePkg.dec
+  RedfishPkg/RedfishPkg.dec
+ 
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiBootServicesTableLib
+  BaseMemoryLib
+  UefiLib
+  JsonLib
+ 
+[Guids]
+ 
+[Ppis]
+ 
+[Protocols]
+  gEfiHttpProtocolGuid                         ## CONSUMES
+  gEfiHttpServiceBindingProtocolGuid           ## CONSUMES
+  gEfiSimpleTextInProtocolGuid                 ## CONSUMES
+ 
+[FeaturePcd]
+ 
+[Pcd]
