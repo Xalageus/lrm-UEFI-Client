@@ -30,7 +30,6 @@ cp build/rom/OVMF_VARS.fd /opt/lrm_uefi_client/OVMF_VARS.fd
 chmod -R a+rw /opt/lrm_uefi_client
 
 # Create vm
-virt-install --name lrm_uefi_client --memory 512 --vcpus 1 --disk /opt/lrm_uefi_client/hdd.qcow2,bus=sata --import --cdrom /opt/lrm_uefi_client/lrm_uefi_client.iso --os-variant generic --network default --boot loader=/opt/lrm_uefi_client/OVMF_CODE.fd,loader_type=pflash,nvram=/opt/lrm_uefi_client/OVMF_VARS.fd --boot cdrom --print-xml 1 > build/vm.xml
+virt-install --name lrm_uefi_client --memory 512 --vcpus 1 --disk /opt/lrm_uefi_client/hdd.qcow2,bus=sata --import --cdrom /opt/lrm_uefi_client/lrm_uefi_client.iso --os-variant generic --network default --boot loader=/opt/lrm_uefi_client/OVMF_CODE.fd,loader.type=pflash,loader_ro=yes,nvram=/opt/lrm_uefi_client/OVMF_VARS.fd --boot cdrom --print-xml 1 > build/vm.xml
 virsh define build/vm.xml
-
 rm -f build/vm.xml
